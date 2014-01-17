@@ -2,9 +2,12 @@
  
 ##Learning Competencies 
 
-##Summary 
+* Create well-defined classes with a single responsibility
+* Identify and implement classes based on real world requirements
+* Implement clean and flexible interfaces between objects
+* Create interactive command-line applications with data persistence
 
- # Ruby Flashcards 1: Single Deck
+##Summary 
 
 Let's build a simple flashcard game in Ruby with a command-line interface.  Here is an example of one possible implementation:
 
@@ -30,15 +33,11 @@ Definition
 
 This is your first challenge using Github!  Please follow [this git workflow protocol](https://gist.github.com/dbc-challenges/83ca164b2b8e6b8d9909) to keep things simple!  Remember: commit early and often.
 
-### Learning Goals
+##Releases
 
-- Understand how and when to separate concerns
-- Be able to create interactive command-line applications with data persistence
-- Effectively manage a multiple-file application
+###Release 0 : Design
 
-## Objectives
-
-### Design Your Data Model and Control Flow
+####Choose Your Data Model and Control Flow
 
 You might already have a clear picture of how to design your program, but it is always a good idea to articulate your concept using pseudocode, wireframes, or another modeling tool.  You should be able to draw or write out a rough sketch of both the **data model** and the **control flow** of the program.
 
@@ -55,7 +54,7 @@ Once you have a plan in place, create the skeletal file structure for your app.
 
 Find a staff member or another student and get their opinion on your overall structure.
 
-### Cards in a file
+#### Cards in a file
 
 The next step is to answer the question of where the cards will come from.  Provided in the gist is a file called `sample_cards.txt`, which demonstrates a supremely basic way to store the card data (definition on one line, term on the next, and then a blank line to separate the two).  In other words, the file looks like:
 
@@ -75,7 +74,8 @@ You could use CSV or YAML, but make sure that you have a good reason for picking
 **Create your file for storing the cards.**   You can make the cards on any topic you like, just don't spend much time on the actual content.  Pick something simple (science, history, politics, exotic fruit, whatever) and give yourself a half-dozen cards to play around with.
 -->
 
-### Core architecture
+###Release 1 : Build it!
+#### Core architecture
 
 Now that you've got a general sketch for your app design and some sample data to work with, it's time to build out your app.
 
@@ -87,7 +87,7 @@ Some questions to consider:
 - How will your classes interact?
 - Where should the game logic live?  What about the file parsing?
 
-### Interface design
+#### Interface design
 
 By this point, you should have all of the core components of your application built out.  In other words, *your code should be an accurate model of the ingredients needed for a real-life flashcard game*.  Are you missing anything?
 
@@ -104,15 +104,12 @@ Some questions to consider:
 
 Finish building out your app.  Make sure everything works peachy keen.
 
-### Post-challenge questions
+##Optimize Your Learning 
 
+Consider your choices:
 - Why did you organize your classes and logic in the way that you did?
 - What have you learned about object-oriented thinking?
 - How flexible is your code?  For example, how many changes would you have to make in how many different files to allow for users to see the first letter of the answer?  What if you wanted to allow case-insensitive answers? 
 
-##Releases
-###Release 0 
-
-##Optimize Your Learning 
 
 ##Resources
