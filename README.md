@@ -31,8 +31,6 @@ Definition
 (and so on)
 ```
 
-This is your first challenge using Github!  Please follow [this git workflow protocol](https://gist.github.com/dbc-challenges/83ca164b2b8e6b8d9909) to keep things simple!  Remember: commit early and often.
-
 ##Releases
 
 ###Release 0 : Design
@@ -113,3 +111,12 @@ Consider your choices:
 
 
 ##Resources
+
+* [software design patterns](http://en.wikipedia.org/wiki/Software_design_pattern)
+* [Model-View-Controller](http://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller) 
+*  [Jeff Atwood's post](http://www.codinghorror.com/blog/2008/05/understanding-model-view-controller.html) 
+
+**SPOILER ALERT: These contain solutions to the Todo challenge - make sure you have solved it on your own first!**
+
+* [Code for Tanner's ToDo app](https://gist.github.com/openspectrum/02239bf831cb7ad4b31f) 
+* [Jesse's talk on refactoring the ToDo app](http://shereef.wistia.com/medias/c9cbc4fc79)  
