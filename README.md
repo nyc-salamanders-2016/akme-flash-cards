@@ -31,30 +31,7 @@ Definition
 (and so on)
 ```
 
-
 ##Releases
-
-In addition to just "solving the challenge", dedicate some time and effort to two essential skills that all software teams must have: Collaborative Product Development
-
-Managing product development with multiple collaborators using version control and
-Writing robust, well-structured, and flexible code which follows tried-and-true design patterns
-
-#### Collaborative Product Development
-
-For the first skill, you will be using git and GitHub. Here is a bare-bones outline of one kind of [git workflow](https://gist.github.com/dbc-challenges/43860f5056b4955750f6)
-
-You can also check out this tutorial: http://try.github.io.
-
-Some other git resources:
-
-Good reference: http://gitimmersion.com/
-How to use branching: http://pcottle.github.io/learnGitBranching
-
-
-## Design Patterns
-
-There are many, many different 
-
 
 ###Release 0 : Design
 
