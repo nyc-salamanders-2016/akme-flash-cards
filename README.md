@@ -1,4 +1,4 @@
-# Ruby Flashcards 1 Single Deck 
+# Ruby Flashcards
  
 ##Learning Competencies 
 
