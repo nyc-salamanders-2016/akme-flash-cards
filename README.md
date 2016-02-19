@@ -1,11 +1,4 @@
 # Ruby Flashcards
- 
-##Learning Competencies 
-
-* Create well-defined classes with a single responsibility
-* Identify and implement classes based on real world requirements
-* Implement clean and flexible interfaces between objects
-* Create interactive command-line applications with data persistence
 
 ##Summary 
 
