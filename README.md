@@ -1,115 +1,48 @@
 # Ruby Flashcards
 
-##Summary 
+## Summary 
+We're going to build a flashcard application that functions like the application shown in Figure 1—it's not necessary to build an exact copy.
 
-Let's build a simple flashcard game in Ruby with a command-line interface.  Here is an example of one possible implementation:
-
-```text
-$ ruby flashcards.rb
-Welcome to Ruby Flash Cards. To play, just enter the correct term for each definition.  Ready?  Go!
- 
-Definition
-A file format in which values are delimited by commas.
-
-Guess: YAML
-Incorrect!  Try again.
-
-Guess: XML
-Incorrect!  Try again.
-
-Guess: CSV
-Correct!
-
-Definition
-(and so on)
-```
-
-##Releases
-
-###Release 0 : Design
-
-####Choose Your Data Model and Control Flow
-
-You might already have a clear picture of how to design your program, but it is always a good idea to articulate your concept using pseudocode, wireframes, or another modeling tool.  You should be able to draw or write out a rough sketch of both the **data model** and the **control flow** of the program.
-
-This stage should take at most 15-20 minutes.  If you're spending more than that, find a staff member to get you unstuck.
-
-Some questions to consider:
-
-- Do you fully understand the logic of the game?
-- What classes (state and behavior) do you need?
-- What are the responsibilities of each class?  Are they single responsibilities?
-- Which methods should be public?  Which should be private?
-
-Once you have a plan in place, create the skeletal file structure for your app.
-
-Find a staff member or another student and get their opinion on your overall structure.
-
-#### Cards in a file
-
-The next step is to answer the question of where the cards will come from.  Provided in the gist is a file called `sample_cards.txt`, which demonstrates a supremely basic way to store the card data (definition on one line, term on the next, and then a blank line to separate the two).  In other words, the file looks like:
-
-```text
-definition1 definition1 definition1 etc.
-term1 term1 term1 etc.
-
-definition2 definition2 definition2 etc.
-term2 term2 term2 etc.
-```
-
-You can use this same file format for your cards if you like, or you can create your own.  Just don't get too fancy.  Remember, we're keeping it simple.
-
-<!--
-You could use CSV or YAML, but make sure that you have a good reason for picking the format that you do.  Pick a file format that solves for the data storage needs of the app, but no more.  At this point, do you really need anything more than plain text?
-
-**Create your file for storing the cards.**   You can make the cards on any topic you like, just don't spend much time on the actual content.  Pick something simple (science, history, politics, exotic fruit, whatever) and give yourself a half-dozen cards to play around with.
--->
-
-###Release 1 : Build it!
-#### Core architecture
-
-Now that you've got a general sketch for your app design and some sample data to work with, it's time to build out your app.
-
-Think carefully about how each piece of the puzzle should fit together.  Build it out slowly and test as you go.  Skip the user interface (the part of your program that will receive and respond to user input) for now.  You can mock user input by creating having a method on one of your classes that takes a guess as an argument and performs the appropriate action.  Later you can hook this up to real, live user input.
-
-Some questions to consider:
-
-- How will you generate card objects from the source file?
-- How will your classes interact?
-- Where should the game logic live?  What about the file parsing?
-
-#### Interface design
-
-By this point, you should have all of the core components of your application built out.  In other words, *your code should be an accurate model of the ingredients needed for a real-life flashcard game*.  Are you missing anything?
-
-Finally, it is time to implement the interactive part of the game: the piece that will actually let you play with it via your very-own custom interface.
-
-Think about what kinds of inputs and outputs your interface will handle and write the code to match for them.
-
-Some questions to consider:
-
-- How should you check for whether the user's answer is correct?  Where should this logic live?
-- What happens when a user starts the game?
-- What happens when a user finishes the game?
-- How will you handle incorrect answers?
-
-Finish building out your app.  Make sure everything works peachy keen.
-
-##Optimize Your Learning 
-
-Consider your choices:
-- Why did you organize your classes and logic in the way that you did?
-- What have you learned about object-oriented thinking?
-- How flexible is your code?  For example, how many changes would you have to make in how many different files to allow for users to see the first letter of the answer?  What if you wanted to allow case-insensitive answers? 
+![flashcards animation](readme-assets/flashcards-animation.gif)  
+*Figure 1*.  Example flashcard implementation.
 
 
-##Resources
+## Releases
+### Pre-release: Describe and Design the Application
+Before we begin to code, let's agree on what we're building.  From loading the data in a file to checking if a guess is correct, what does playing a deck of flashcards look like?  What all needs to happen?   As was stated in the *Summary*, our application should function like the example in Figure 1, but it does not need to be an exact copy—for example, we might want to allow users multiple guesses per card.
 
-* [software design patterns](http://en.wikipedia.org/wiki/Software_design_pattern)
-* [Model-View-Controller](http://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller) 
-*  [Jeff Atwood's post](http://www.codinghorror.com/blog/2008/05/understanding-model-view-controller.html) 
+Once we have a solid understanding of what needs to happen, develop a design for the application.  We should be able to draw or write a rough sketch of the objects we anticipate needing (i.e., our data models), how they interact, and the overall flow of our program.
 
-**SPOILER ALERT: These contain solutions to the Todo challenge - make sure you have solved it on your own first!**
+This release should take roughly 15 - 20 minutes.  If it's taking longer, find an instructor to get unstuck.
 
-* [Code for Tanner's ToDo app](https://gist.github.com/openspectrum/02239bf831cb7ad4b31f) 
-* [Jesse's talk on refactoring the ToDo app](http://shereef.wistia.com/medias/c9cbc4fc79)  
+
+### Release 0: Build the Application
+Once we're on the same page regarding the design of our flashcard application, it's time to build it.  We have a few example data files (e.g., `nighthawk_flashcard_data.txt`), and a user should be able to play any of these files.
+
+
+### Release 1: Refactor to Model-View-Controller Pattern
+We're going to refactor our code to follow the [Model-View-Controller][wikipedia mvc] (MVC) [design pattern][wikipedia design pattern].  Before we begin changing any code, answer the following questions.
+
+- What does a model represent?
+- How is the view used?
+- What is the responsibility of a controller?
+
+Look at the high-level picture of our flashcard app.  If we designed our application following object-oriented principles (e.g., separation of concerns), our code might already somewhat follow an MVC pattern.  Where does our code show similarities to the MVC pattern?  Where are there differences?
+
+As best we can, refactor our code so that it follows the MVC design pattern.  Remember, refactoring means changing the way our code is written, not how it behaves.  Our implementation will likely differ from our cohort mates' implementations; that's okay.  The important thing to consider is how well we structure our code to represent the abstract concept of a design pattern.
+
+*Note:* Here's an [example MVC implementation][] for a hospital-related application.
+
+
+## Conclusion
+Reflect back on the decisions we made in completing this challenge.  How did the design decisions that we made in the *Pre-release* hold up as we began to develop our application?  Did they facilitate the MVC design pattern?  What changed and what remained from our original design?  
+
+How flexible is our code?  Is it easily adaptable?  If we made changes to our code, how many objects would need to be modified?  For example, what if we wanted to support multiple choice questions?  What if we changed the data store file?  Was it easily adapted to the MVC pattern?
+
+What learnings can we take forward and apply to our future code?
+
+
+[example mvc implementation]:  readme-assets/mvc-hospital-example.md
+[wikipedia design pattern]: http://en.wikipedia.org/wiki/Software_design_pattern
+[wikipedia mvc]: http://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller
+
