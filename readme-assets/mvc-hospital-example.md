@@ -19,19 +19,13 @@ end
 
 ### Patient View
 ```ruby
-class PatientView
-  def initialize(patient)
-    @patient = patient
-  end
-  
-  def render
+module PatientView  
+  def self.show(patient)
     "#{patient.mrn} - #{patient.name} (DOB: #{format_dob(patient.dob)})"
   end
   
   private
-  attr_reader :patient
-  
-  def format_dob(date)
+  def self.format_dob(date)
   	date.strftime("%m/%d/%Y")
   end
 end
@@ -61,14 +55,8 @@ end
 
 ### Hospital View
 ```ruby
-class HospitalView
-  attr_reader :hospital
-  
-  def initialize(hospital)
-    @hospital = hospital
-  end
-  
-  def render
+module HospitalView
+  def self.show(hospital)
     "#{hospital.name}\n#{hospital.patient_count} patients admitted."
   end
 end
@@ -93,15 +81,13 @@ class Controller
   attr_reader :hospital
   
   def show_hospital
-    view = HospitalView.new(hospital)
-    view.render
+    HospitalView.show(hospital)
   end
   
   def show_patient(search_name)
     patient = hospital.find_patient_by_name(search_name)
     if patient
-      view = PatientView.new(patient)
-      view.render
+      PatientView.show(patient)
     else
       "Could not find a patient with the name #{search_name}."
     end
