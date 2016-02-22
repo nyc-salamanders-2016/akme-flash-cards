@@ -1,7 +1,7 @@
 # Ruby Flashcards
 
 ## Summary 
-We're going to build a flashcard application that functions like the application shown in Figure 1—it's not necessary to build an exact copy.
+We're going to build a flashcard application that functions like the application shown in Figure 1—it's not necessary to build an exact copy.  As always, write elegant, object-oriented code, thinking through design decisions and making judgements on the best courses of action.
 
 ![flashcards animation](readme-assets/flashcards-animation.gif)  
 *Figure 1*.  Example flashcard implementation.
