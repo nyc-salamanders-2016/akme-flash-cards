@@ -63,17 +63,17 @@ end
 ```
 
 
-### Hospital Application Controller
+### Hospital Controller
 ```ruby
-class Controller
+class HospitalController
   def initialize(hospital)
     @hospital = hospital
   end
   
-  def run(command, option = nil)
+  def run(command, *options)
     case command
     when "hospital" then show_hospital
-    when "patient" then show_patient(option)
+    when "patient" then show_patient(options.first)
     end
   end
   
@@ -92,5 +92,23 @@ class Controller
       "Could not find a patient with the name #{search_name}."
     end
   end
+end
+```
+
+
+### Runner
+```ruby
+require_relative "patient"
+require_relative "patient_view"
+require_relative "hospital"
+require_relative "hospital_view"
+require_relative "hospital_controller"
+
+if ARGV.any?
+  patients   = # Create a collection of patient objects
+  hospital   = Hospital.new("St. Charles Hospital", patients)
+  controller = HospitalController.new(hospital)
+  
+  puts controller.run(*ARGV)
 end
 ```
