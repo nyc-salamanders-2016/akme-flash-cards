@@ -28,9 +28,7 @@ class Deck
    current_card
   end
 
-
-
-  def evaluate(object,user_response)  # MOVE TO MODULE?
+  def evaluate(object,user_response)
     if object.answer == user_response.downcase
       @correct_answers +=1
       "Correct!"
