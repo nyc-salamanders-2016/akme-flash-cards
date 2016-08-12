@@ -1,7 +1,8 @@
 class Deck
-  attr_reader :flashcard_arr, :correct_answers
+  attr_reader :flashcard_arr, :correct_answers, :answered_flashcards
   def initialize
     @flashcard_arr = []
+    @answered_flashcards = []
     @correct_answers = 0
   end
 
@@ -17,12 +18,24 @@ class Deck
     @flashcard_arr
   end
 
-  def evaluate(object,user_response)
+  def empty?
+    @flashcard_arr.empty?
+  end
+
+  def next_card
+   current_card = @flashcard_arr.shift
+   answered_flashcards << current_card
+   current_card
+  end
+
+
+
+  def evaluate(object,user_response)  # MOVE TO MODULE?
     if object.answer == user_response.downcase
       @correct_answers +=1
       "Correct!"
     else
-      "Wrong!"
+      "Wrong!\n" + "The correct answer is '#{object.answer}'!"
     end
   end
 

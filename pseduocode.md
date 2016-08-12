@@ -37,3 +37,27 @@ methods to
 
 
 TESTS
+
+
+NEW FEATURES
+
+display correct answer after user response
+
+pretty flashcard
+  clear screen
+  border
+
+try again
+
+have the user pick which text file they want to work with before they start
+  view.stuff for that
+  list the available .txt files?
+
+
+
+
+
+
+
+
+
