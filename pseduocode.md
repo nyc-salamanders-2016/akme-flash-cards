@@ -25,15 +25,15 @@ VIEW
 
 methods to
 
-  load the flash card text file ("deck")
+  load the flash card text file ("deck") [X]
 
-  display question
+  display question [X]
 
-  get response of user to question
+  get response of user to question [X]
 
-  display evaluation of answer
+  display evaluation of answer [X]
 
-  displays the final result of the game
+  displays the final result of the game [C]
 
 
 
