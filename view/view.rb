@@ -1,4 +1,3 @@
-
 class View
 
   def load_file(file)
@@ -9,13 +8,12 @@ class View
     deck_array
   end
 
-
   def display_question(string)
     puts string
   end
 
   def get_user_answer
-    gets.chomp
+    response = STDIN.gets.chomp
   end
 
   def display_evaluation(correct_or_wrong)

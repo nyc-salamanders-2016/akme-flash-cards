@@ -1,5 +1,3 @@
-require_relative 'flashcard'
-
 class Deck
   attr_reader :flashcard_arr, :correct_answers
   def initialize
@@ -29,10 +27,3 @@ class Deck
   end
 
 end
-
-# deck = Deck.new
-# deck.load_flashcards(
-# ["What is a male raccoon called?", "boar", "", "What is a female raccoon called?", "sow", "", "Are raccoons herbivorous, carnivorous, or omnivorous?", "omnivorous", "", "True or false?  Raccoons are nocturnal.", "true", "", "True or false?  Raccoons hibernate.", "false", "", "True or false?  Raccoons can run at speeds up to 15 miles per hour.", "true"])
-# puts deck.flashcard_arr
-# p deck.evaluate(deck.flashcard_arr[0], "boo")
-# p deck.evaluate(deck.flashcard_arr[1], "sow")
